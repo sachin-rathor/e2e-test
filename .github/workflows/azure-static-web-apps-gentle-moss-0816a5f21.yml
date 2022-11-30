@@ -23,6 +23,7 @@ jobs:
           VERBOSE: true
           FUNCTION_LANGUAGE: python
           FUNCTION_LANGUAGE_VERSION: 3.8
+          USEV3_FOR_PYTHON38: true
         id: builddeploy
         uses: Azure/static-web-apps-deploy@latest
         with:
