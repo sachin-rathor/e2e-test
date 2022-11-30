@@ -21,6 +21,8 @@ jobs:
       - name: Build And Deploy
         env:
           VERBOSE: true
+          FUNCTION_LANGUAGE: python
+          FUNCTION_LANGUAGE_VERSION: 3.8
         id: builddeploy
         uses: Azure/static-web-apps-deploy@latest
         with:
