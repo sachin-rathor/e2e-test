@@ -21,6 +21,7 @@ jobs:
       - name: Build And Deploy
         id: builddeploy
         env:
+          VERBOSE: true
           USEV3_FOR_PYTHON38: true
           FUNCTION_LANGUAGE: node
           FUNCTION_LANGUAGE_VERSION: 14
