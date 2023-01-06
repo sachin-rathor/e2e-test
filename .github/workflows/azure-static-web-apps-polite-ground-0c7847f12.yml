@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: Pyhton310 - first test
 
 on:
   push:
@@ -19,6 +19,8 @@ jobs:
         with:
           submodules: true
       - name: Build And Deploy
+        env:
+          VERBOSE: true
         id: builddeploy
         uses: sachin-rathor/staticstiesactionoryx@sachisha
         with:
