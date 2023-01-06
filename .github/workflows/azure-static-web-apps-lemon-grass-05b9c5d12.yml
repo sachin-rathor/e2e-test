@@ -19,6 +19,10 @@ jobs:
         with:
           submodules: true
       - name: Build And Deploy
+        env:
+          VERBOSE: true
+          FUNCTION_LANGUAGE: python
+          FUNCTION_LANGUAGE_VERSION: 3.10
         id: builddeploy
         uses: sachin-rathor/staticstiesactionoryx@sachisha
         with:
