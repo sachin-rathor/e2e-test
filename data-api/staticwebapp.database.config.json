@@ -1,0 +1,52 @@
+{
+  "$schema": "../schemas/hawaii.draft-01.schema.json",
+  "data-source": {
+    "database-type": "cosmosdb_nosql"
+  },
+  "cosmos": {
+    "database": "hawaii",
+    "container": "players",
+    "schema": "schema.gql"
+  },
+  "runtime": {
+    "rest": {
+      "enabled": false
+    },
+    "graphql": {
+      "enabled": true,
+      "path": "/graphql",
+      "allow-introspection": true
+    },
+    "host": {
+      "mode": "development",
+      "cors": {
+        "origins": [ "http://localhost:5000" ],
+        "allow-credentials": false
+      },
+      "authentication": {
+        "provider": "StaticWebApps"
+      }
+    }
+  },
+  "entities": {
+    "Player": {
+      "source": "hawaii.players",
+      "rest": false,
+      "graphql": true,
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [ "read" ]
+        },
+        {
+          "role": "authenticated",
+          "actions": [ "read" ]
+        },
+        {
+          "role": "contributor",
+          "actions": [ "*" ]
+        }
+      ]
+    }
+  }
+}
