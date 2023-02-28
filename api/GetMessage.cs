@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using System.Net;
-using Sachin.Shared;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
@@ -11,7 +10,7 @@ namespace MySpace
 {
     public class SachinRathor
     {
-        [Function("sachinrathor")]
+        [Function("GetMessage")]
         public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequestData req)
         {
 	    var json = JsonConvert.SerializeObject("Welcome to DotNet 7 in PR env from Sachin Rathor!");
